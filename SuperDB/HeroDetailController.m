@@ -147,6 +147,9 @@
 
 -(void)save{
     for (SuperDBEditCell *cell in[self.tableView visibleCells]) {
+        if ([cell.key isEqualToString:@"birthdate"]) {
+            continue;
+        }
         [self.hero setValue:[cell value] forKey:[cell key]];
     }
     NSError *error;
