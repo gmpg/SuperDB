@@ -71,22 +71,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"SuperDBEditCell";
-    SuperDBEditCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell==nil) {
-        cell = [[SuperDBEditCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier ];
-    }
-
     NSUInteger sectionIndex = [indexPath section];
     NSUInteger rowIndex =[indexPath row];
-    
     NSDictionary *section = [self.sections objectAtIndex:sectionIndex];
     NSArray * rows = [section objectForKey:@"rows"];
     NSDictionary *row = [rows objectAtIndex:rowIndex];
+
+    NSString* cellClassname = [row valueForKey:@"class"];
+    
+    SuperDBEditCell *cell = [tableView dequeueReusableCellWithIdentifier:cellClassname];
+    
+    if (cell==nil) {
+        Class cellClass = NSClassFromString(cellClassname);
+        cell = [cellClass alloc];
+        cell = [cell initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellClassname ];
+    }
+
+    
     cell.label.text = [row objectForKey:@"label"];
     cell.key = [row objectForKey:@"key"];
-    cell.textField.text = [[self.hero valueForKey:[row objectForKey:@"key"]] description];
+    cell.textField.text = [self.hero valueForKey:[row objectForKey:@"key"]] ;
+    NSArray *values = [row valueForKey:@"values"];
+    if (values!=nil) {
+        [cell performSelector:@selector(setValues:) withObject:values];
+    }
     return cell;
 }
 
@@ -147,9 +155,6 @@
 
 -(void)save{
     for (SuperDBEditCell *cell in[self.tableView visibleCells]) {
-        if ([cell.key isEqualToString:@"birthdate"]) {
-            continue;
-        }
         [self.hero setValue:[cell value] forKey:[cell key]];
     }
     NSError *error;

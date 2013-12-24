@@ -27,6 +27,8 @@
 		77E78BB61863EF9B002F207B /* SuperDBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E78BB51863EF9B002F207B /* SuperDBTests.m */; };
 		77E78BC01863F00F002F207B /* SuperDB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E78BBF1863F00F002F207B /* SuperDB.storyboard */; };
 		77E78BC318642B3F002F207B /* HeroListControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E78BC218642B3F002F207B /* HeroListControllerViewController.m */; };
+		B80B3E741867C9EC00A66279 /* SuperDBDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B80B3E731867C9EC00A66279 /* SuperDBDateCell.m */; };
+		B8D7B78518691E610015EE11 /* SuperDBPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D7B78418691E610015EE11 /* SuperDBPickerCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		77E78BBF1863F00F002F207B /* SuperDB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SuperDB.storyboard; sourceTree = SOURCE_ROOT; };
 		77E78BC118642B3F002F207B /* HeroListControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroListControllerViewController.h; sourceTree = "<group>"; };
 		77E78BC218642B3F002F207B /* HeroListControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroListControllerViewController.m; sourceTree = "<group>"; };
+		B80B3E721867C9EC00A66279 /* SuperDBDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperDBDateCell.h; sourceTree = "<group>"; };
+		B80B3E731867C9EC00A66279 /* SuperDBDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperDBDateCell.m; sourceTree = "<group>"; };
+		B8D7B78318691E600015EE11 /* SuperDBPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperDBPickerCell.h; sourceTree = "<group>"; };
+		B8D7B78418691E610015EE11 /* SuperDBPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperDBPickerCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,10 @@
 				777A8B2E18666A500041EC8D /* HeroDetailConfiguration.plist */,
 				777A8B3018667B890041EC8D /* SuperDBEditCell.h */,
 				777A8B3118667B890041EC8D /* SuperDBEditCell.m */,
+				B80B3E721867C9EC00A66279 /* SuperDBDateCell.h */,
+				B80B3E731867C9EC00A66279 /* SuperDBDateCell.m */,
+				B8D7B78318691E600015EE11 /* SuperDBPickerCell.h */,
+				B8D7B78418691E610015EE11 /* SuperDBPickerCell.m */,
 			);
 			path = SuperDB;
 			sourceTree = "<group>";
@@ -271,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B80B3E741867C9EC00A66279 /* SuperDBDateCell.m in Sources */,
+				B8D7B78518691E610015EE11 /* SuperDBPickerCell.m in Sources */,
 				77E78BA01863EF9B002F207B /* SuperDB.xcdatamodeld in Sources */,
 				777A8B3218667B890041EC8D /* SuperDBEditCell.m in Sources */,
 				77E78B9D1863EF9B002F207B /* AppDelegate.m in Sources */,
