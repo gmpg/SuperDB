@@ -90,7 +90,7 @@
     
     cell.label.text = [row objectForKey:@"label"];
     cell.key = [row objectForKey:@"key"];
-    cell.textField.text = [self.hero valueForKey:[row objectForKey:@"key"]] ;
+    cell.textField.text = [[self.hero valueForKey:[row objectForKey:@"key"]] description] ;
     NSArray *values = [row valueForKey:@"values"];
     if (values!=nil) {
         [cell performSelector:@selector(setValues:) withObject:values];
